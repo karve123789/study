@@ -12,11 +12,7 @@ public class CalcPanel {
     // тут мы понимаем уже какой был введен оператор
     String operator = Parser.parseOperator(raw);
 
-    //тут мы поймем какие были введены операнды
-    String operand1 = Parser.parseFirstOperand(raw);
 
-    String operand2 = Parser.parseSecondOperand(raw);
-
-    System.out.println(Logic.calculate(operand1, operator, operand2));
+    System.out.println(Logic.calculate(Parser.parseOperands(raw)[0], operator, Parser.parseOperands(raw)[1]));
   }
 }
