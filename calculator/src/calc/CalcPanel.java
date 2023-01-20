@@ -12,7 +12,6 @@ public class CalcPanel {
     // тут мы понимаем уже какой был введен оператор
     String operator = Parser.parseOperator(raw);
 
-
-    System.out.println(Logic.calculate(Parser.parseOperands(raw)[0], operator, Parser.parseOperands(raw)[1]));
+    Logic.calculate(Parser.parseOperands(raw)[0], Parser.parseOperator(raw), Parser.parseOperands(raw)[1]);
   }
 }
