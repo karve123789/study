@@ -10,8 +10,6 @@ public class CalcPanel {
       String raw = sc.nextLine();
 
     // тут мы понимаем уже какой был введен оператор
-    String operator = Parser.parseOperator(raw);
-
     Logic.calculate(Parser.parseOperands(raw)[0], Parser.parseOperator(raw), Parser.parseOperands(raw)[1]);
   }
 }
