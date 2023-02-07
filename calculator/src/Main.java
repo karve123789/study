@@ -9,5 +9,6 @@ public class Main {
 //и умеет делать "* / + -"
     // числа только от [1 до 10] включительно
     public static void main(String[] args) {
+
     }
 }
