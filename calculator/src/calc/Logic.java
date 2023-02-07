@@ -1,5 +1,7 @@
 package calc;
 
+import static calc.util.Romnumber.*;
+
 public class Logic {
   public static String calculate(String a, String operator, String b){
     //если a или b римские то нам нужно преобразовать их в int
