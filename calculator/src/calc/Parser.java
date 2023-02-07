@@ -3,8 +3,13 @@ package calc;
 
 import sun.security.util.ArrayUtil;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class Parser {
     public static String parseOperator(String message) {
@@ -32,7 +37,14 @@ public class Parser {
 
 
     public static String[] parseOperands(String str) {
-        return str.split("\\s*\\+\\s*");
+        str = str.replaceAll("\\s", "");
+        Pattern pattern = Pattern.compile("[0-9]+|[A-Z]+");
+        Matcher matcher = pattern.matcher(str);
+        List<String> operands = new ArrayList<>();
+        while (matcher.find()) {
+            operands.add(matcher.group());
+        }
+        return operands.toArray(new String[0]);
     }
 
     public static void main(String[] args) {
