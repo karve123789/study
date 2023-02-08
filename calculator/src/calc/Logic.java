@@ -10,8 +10,40 @@ public class Logic {
     // где каждый операнд это стринга которая может быть как арабской так и римской
     // что то типа if(операнд1 == число && операнд2 == число) {преобразовать из стринг в инт и тупа сложить взяв оператор опять же из аругента в параметрах этого метода}
     // если же это арабские это будет else где нужно сделать пока заглушку которая будет (псевдо)переводить числа в арабские
-    return "result";
-  }
+      // if ( a=="1" || a=="2"){ ???
+
+      // }
+
+
+
+      int a1 = Integer.parseInt(a);
+      int b1 = Integer.parseInt(b);
+
+      if (operator == "+") {
+        int result1 = a1 + b1;
+        String result = Integer.toString(result1);
+        System.out.println(result);
+      }
+      if (operator == "-") {
+        int result1 = a1 - b1;
+        String result = Integer.toString(result1);
+        System.out.println(result);
+      }
+      if (operator == "*") {
+        int result1 = a1 * b1;
+        String result = Integer.toString(result1);
+        System.out.println(result);
+      }
+      if (operator == "/") {
+        int result1 = a1 / b1;
+        String result = Integer.toString(result1);
+        System.out.println(result);
+      }
+
+      return null;
+    }
+
+
 
   // TODO: эту логику тут не нужно, вынести в другой класс
 //  public static int remakeRom(String s) {
@@ -107,6 +139,9 @@ public class Logic {
     return 5;
   }
 
+  public static void main(String[] args) {
+   calculate("51","*","4");
+  }
 }
 
 
