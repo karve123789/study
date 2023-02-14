@@ -1,15 +1,10 @@
 package calc;
 
 
-import sun.security.util.ArrayUtil;
-
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public class Parser {
     public static String parseOperator(String message) {
@@ -44,6 +39,7 @@ public class Parser {
         while (matcher.find()) {
             operands.add(matcher.group());
         }
+
         return operands.toArray(new String[0]);
     }
 

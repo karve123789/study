@@ -3,49 +3,56 @@ package calc;
 import static calc.util.Romnumber.*;
 
 public class Logic {
-  public static String calculate(String a, String operator, String b){
-    //ToDo Наш парсер уже умеет отдавать операнды и оператор  "parseOperands(str)" и "parseOperator(message)"
-    // использовать их тут не нужно они будут вызваны в классе оркестраторе
-    // твоя задача именно реализовать логику в входными данными в параметрах метода "(String a, String operator, String b)"
-    // где каждый операнд это стринга которая может быть как арабской так и римской
-    // что то типа if(операнд1 == число && операнд2 == число) {преобразовать из стринг в инт и тупа сложить взяв оператор опять же из аругента в параметрах этого метода}
-    // если же это арабские это будет else где нужно сделать пока заглушку которая будет (псевдо)переводить числа в арабские
-      // if ( a=="1" || a=="2"){ ???
+    public static String calculate(String a, String operator, String b) {
+        //ToDo Наш парсер уже умеет отдавать операнды и оператор  "parseOperands(str)" и "parseOperator(message)"
+        // использовать их тут не нужно они будут вызваны в классе оркестраторе
+        // твоя задача именно реализовать логику в входными данными в параметрах метода "(String a, String operator, String b)"
+        // где каждый операнд это стринга которая может быть как арабской так и римской
+        // что то типа if(операнд1 == число && операнд2 == число) {преобразовать из стринг в инт и тупа сложить взяв оператор опять же из аругента в параметрах этого метода}
+        // если же это арабские это будет else где нужно сделать пока заглушку которая будет (псевдо)переводить числа в арабские
+        // if ( a=="1" || a=="2"){ ???
 
-      // }
+        // }
+        if (operator == "+") {
+            plus(a, b);
+        }
+        if (operator == "-") {
+            minus(a, b);
+        }
+        if (operator == "*") {
+            multiply(a, b);
+        }
+        if (operator == "/") {
+            divide(a, b);
+        }
 
-
-
-      int a1 = Integer.parseInt(a);
-      int b1 = Integer.parseInt(b);
-
-      if (operator == "+") {
-        int result1 = a1 + b1;
-        String result = Integer.toString(result1);
-        System.out.println(result);
-      }
-      if (operator == "-") {
-        int result1 = a1 - b1;
-        String result = Integer.toString(result1);
-        System.out.println(result);
-      }
-      if (operator == "*") {
-        int result1 = a1 * b1;
-        String result = Integer.toString(result1);
-        System.out.println(result);
-      }
-      if (operator == "/") {
-        int result1 = a1 / b1;
-        String result = Integer.toString(result1);
-        System.out.println(result);
-      }
-
-      return null;
+        return null;
     }
 
 
+//    public static String doIt(String a, String operator, String b) {
+//        // ToDO тернарник написать
+//
+//    }
 
-  // TODO: эту логику тут не нужно, вынести в другой класс
+
+    private static String plus(String a, String b) {
+        return String.valueOf(Integer.parseInt(a) + Integer.parseInt(b));
+    }
+
+    private static String minus(String a, String b) {
+        return String.valueOf(Integer.parseInt(a) - Integer.parseInt(b));
+    }
+
+    private static String multiply(String a, String b) {
+        return String.valueOf(Integer.parseInt(a) * Integer.parseInt(b));
+    }
+
+    private static String divide(String a, String b) {
+        return String.valueOf(Integer.parseInt(a) / Integer.parseInt(b));
+    }
+
+    // TODO: эту логику тут не нужно, вынести в другой класс
 //  public static int remakeRom(String s) {
 //    if (s.equals("I")) {
 //      System.out.println(I.getRom());
@@ -100,7 +107,7 @@ public class Logic {
 //    } else
 //      return 0;
 //  }
-  //ToDo этот метод удалиьт он уже реализова в парсере
+    //ToDo этот метод удалиьт он уже реализова в парсере
 //  public static String parseOperator(String message) {
 //    // [+ - * /]
 //    // регулярные выражения
@@ -122,7 +129,7 @@ public class Logic {
 //    } else return "неверно";
 //  }
 
-  //мэйн для тестов оставил, будет нужен
+    //мэйн для тестов оставил, будет нужен
 //  public static void main(String[] args) {
 //    remakeRom("I");
 //    remakeRom("II");
@@ -133,15 +140,15 @@ public class Logic {
 //
 //  }
 
-  public static int mock(String str){
-    // Метод заглушка который принимает стрингу например "V" и возвращает 5 как инт
-    // нужен для того что бы пока не реализовывать перевод из римских в арабские
-    return 5;
-  }
+    public static int mock(String str) {
+        // Метод заглушка который принимает стрингу например "V" и возвращает 5 как инт
+        // нужен для того что бы пока не реализовывать перевод из римских в арабские
+        return 5;
+    }
 
-  public static void main(String[] args) {
-   calculate("51","*","4");
-  }
+    public static void main(String[] args) {
+        calculate("51", "*", "4");
+    }
 }
 
 
