@@ -30,5 +30,7 @@ public class Main {
         // Interface segregation
         // Dependency inversion
         // API почитать + Фреймворки и библиотеки -> чем отличаются и что делают
+        // KISS principle
+        // Write Once Use Everywhere
     }
 }
